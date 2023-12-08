@@ -1,0 +1,98 @@
+$color : red;
+
+.parent {
+    background-color: $color;
+    ;
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .child1 {
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+
+        p {
+            color: green;
+        }
+    }
+
+    .child2 {
+        background-color: brown;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+
+        p {
+            color: goldenrod;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+
+            &:hover {
+                background-color: green;
+            }
+        }
+    }
+
+}
+
+
+
+@mixin respond($point) {
+    @if $point ==phone {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }
+
+}
+
+
+@include respond(phone) {
+    .parent {
+        background-color: green;
+        height: 350px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .child1 {
+            background-color: blue;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+
+            p {
+                color: green;
+            }
+        }
+
+        .child2 {
+            background-color: brown;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+
+            p {
+                color: goldenrod;
+            }
+
+            button {
+                background-color: red;
+                color: white;
+
+                &:hover {
+                    background-color: green;
+                }
+            }
+        }
+
+    }
+}
